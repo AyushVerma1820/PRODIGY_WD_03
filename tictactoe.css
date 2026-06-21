@@ -1,0 +1,164 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background:url("./sky.jpg") no-repeat center center fixed;
+    background-size: cover;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(29, 136, 165);
+    text-align: center;
+    padding-bottom: 40px;
+}
+
+h1 {
+    margin-top: 30px;
+    font-size: 36px;
+    letter-spacing: 1px;
+}
+
+hr {
+    width: 500px;
+    margin: 8px auto;
+    background-color: skyblue;
+    border: 0;
+    height: 2px;
+}
+
+/* Mode toggle buttons */
+.mode-toggle {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px auto 10px;
+}
+
+.mode-btn {
+    padding: 8px 20px;
+    font-size: 15px;
+    border: 2px solid lightblue;
+    border-radius: 6px;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.mode-btn.active {
+    background-color: skyblue;
+    color: white;
+    font-weight: bold;
+}
+
+/* Score row */
+.score-row {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    margin: 14px auto;
+}
+
+.score-card {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    padding: 10px 24px;
+    min-width: 80px;
+}
+
+.score-label {
+    font-size: 12px;
+    color: lightblue;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+.score-num {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+/* Status text */
+#game-status {
+    font-size: 18px;
+    color: lightblue;
+    margin: 10px auto;
+    min-height: 26px;
+    font-weight: bold;
+}
+
+#game-status.winner {
+    color: #90ee90;
+}
+
+#game-status.draw {
+    color: #ffd700;
+}
+
+/* Game board */
+#game-board {
+    width: 450px;
+    height: 450px;
+    margin: 10px auto;
+    background-color: skyblue;
+    border: 6px solid lightblue;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+/* Individual cells */
+.game-cell {
+    border: 6px solid lightblue;
+    border-radius: 2px;
+    font-size: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.12s;
+    user-select: none;
+    line-height: 1;
+}
+
+.game-cell:hover:not(.taken) {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.game-cell.taken {
+    cursor: default;
+}
+
+.game-cell.x-mark {
+    color: #003f7f;
+}
+
+.game-cell.o-mark {
+    color: #7f1f00;
+}
+
+/* Winning cell highlight */
+.winning-game-cell {
+    background-color: white;
+    color: skyblue;
+}
+
+/* Restart button */
+#game-restart-button {
+    margin-top: 20px;
+    padding: 10px 30px;
+    font-size: 18px;
+    background-color: skyblue;
+    color: white;
+    border: 3px solid lightblue;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#game-restart-button:hover {
+    background-color: deepskyblue;
+}
